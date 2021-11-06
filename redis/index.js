@@ -3,7 +3,6 @@ const ErrorModel = require("../model/error");
 
 const redis = new Redis("redis://:123456@127.0.0.1:6380");
 const processMessage = async (message) => {
-  // console.log(message)
   const data = JSON.parse(message[1][1]);
   await ErrorModel.create({
     error_type: data.error_type,
@@ -19,7 +18,6 @@ async function listenForMessage(lastId = "$") {
 
   messages.forEach(processMessage);
 
-  // Pass the last id of the results to the next round.
   await listenForMessage(messages[messages.length - 1][0]);
 }
 listenForMessage();
@@ -34,44 +32,3 @@ exports.createRedisClient = function () {
     });
   });
 };
-// const authedRedis = new Redis("redis://:123456@127.0.0.1:6380");
-
-// exports.redisSet = function (key, value) {
-//   authedRedis.set(key, value);
-// };
-
-// authedRedis.on("error", (err) => {
-//   console.error("Redis 连接出错", err);
-// });
-
-// authedRedis.on("ready", async () => {
-//   console.log("Redis connection is successful");
-//   await monitorQueue(authedRedis);
-// });
-
-// async function monitorQueue(r) {
-//   while (true) {
-//     let res = null;
-//     try {
-//       res = await r.brpop("queue", 60 * 10);
-//       console.log("✿✿ヽ(°▽°)ノ✿  ------->", res);
-//     } catch (error) {
-//       console.log("brpop 出错 💀 ，重新brpop 😑", err);
-//       continue;
-//     }
-//   }
-// }
-
-// example
-// authedRedis.set("foo", "bar");
-// authedRedis.get("foo", function (err, result) {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log("result::", result);
-//   }
-// });
-
-// authedRedis.lpush("my_mq", "001", "002", "003");
-
-// module.exports = authedRedis;
