@@ -1,7 +1,8 @@
 const Redis = require("ioredis");
 const ErrorModel = require("../model/error");
 
-const redis = new Redis("redis://:123456@127.0.0.1:6380");
+const redis = new Redis("redis://:123456@127.0.0.1:2332");
+
 const processMessage = async (message) => {
   const data = JSON.parse(message[1][1]);
   await ErrorModel.create({
@@ -15,7 +16,6 @@ const processMessage = async (message) => {
 async function listenForMessage(lastId = "$") {
   const results = await redis.xread("block", 0, "STREAMS", "mystream", lastId);
   const [key, messages] = results[0]; // `key` equals to "mystream"
-
   messages.forEach(processMessage);
 
   await listenForMessage(messages[messages.length - 1][0]);
@@ -25,7 +25,7 @@ listenForMessage();
 
 exports.createRedisClient = function () {
   return new Promise((resolve, reject) => {
-    const client = new Redis("redis://:123456@127.0.0.1:6380");
+    const client = new Redis("redis://:123456@127.0.0.1:2332");
     client.connect(() => {
       console.log("Redis connection is successful");
       resolve(client);

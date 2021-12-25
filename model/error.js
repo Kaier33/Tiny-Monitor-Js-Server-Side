@@ -17,19 +17,22 @@ const errorModel = sequelize.define(
       type: Seq.CHAR,
     },
     error_info: {
-      type: Seq.TEXT,
+      type: Seq.STRING,
     },
     user_id: {
       type: Seq.CHAR,
     },
     ip: {
       type: Seq.CHAR,
+      allowNull: true
     },
     cookie: {
-      type: Seq.CHAR,
+      type: Seq.STRING,
+      allowNull: true
     },
     header: {
       type: Seq.STRING,
+      allowNull: true
     },
   },
   {
