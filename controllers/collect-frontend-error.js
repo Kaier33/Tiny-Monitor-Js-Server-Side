@@ -1,7 +1,6 @@
 const ErrorModel = require("../model/error");
 const IoRedis = require("ioredis");
 const redis = new IoRedis("redis://:123456@127.0.0.1:2332");
-
 class CollectFrontendError {
   static async reportErr(ctx) {
     ctx.body = "";
@@ -14,13 +13,19 @@ class CollectFrontendError {
       // console.log('body::', ctx.request.body);
       // console.log('type::', typeof(ctx.request.body))
       const body = JSON.parse(ctx.request.body);
-      await ErrorModel.create({
+      const data = JSON.stringify({
         error_type: body.type,
         error_id: body.errorId,
         user_id: body.userId,
         error_info: ctx.request.body,
       });
-      // console.log('ok')
+      await redis.xadd("mystream", 'MAXLEN', 500, "*", "reportData", data);
+      // await ErrorModel.create({
+      //   error_type: body.type,
+      //   error_id: body.errorId,
+      //   user_id: body.userId,
+      //   error_info: ctx.request.body,
+      // });
     } catch (error) {
       console.log("error::", error);
     }

@@ -10,6 +10,10 @@ const errorModel = sequelize.define(
       autoIncrement: true,
       allowNull: true
     },
+    p_id: {
+      type: Seq.CHAR,
+      allowNull: true
+    },
     error_type: {
       type: Seq.CHAR,
     },
