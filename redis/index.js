@@ -1,6 +1,6 @@
 const ErrorModel = require("../model/error");
 const IORedis = require("ioredis");
-const redis = new IORedis("redis://:123456@127.0.0.1:2332");
+const redis = new IORedis("redis://:123456@monit-js-redis:6379");
 const processMessage = async (message) => {
   const data = JSON.parse(message[1][1]);
   await ErrorModel.create({

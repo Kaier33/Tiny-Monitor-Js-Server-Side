@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  monit-js:
+    build: ./
+    ports:
+      - 8233:8233
+    volumes:
+      - ./:/monit-js-server
+    depends_on:
+      - monit-js-db
+      - monit-js-redis
+    networks:
+      - monit-js-network
+    environment:
+      - TZ=Asia/Shanghai
+
+  monit-js-db:
+    restart: always
+    container_name: monit-js-db
+    image: mysql:5.7.36
+    ports:
+      - 2333:3306
+    volumes:
+      - ./volumes/mysql_vol/conf/my.cnf:/etc/mysql/my.cnf
+      - ./volumes/mysql_vol/data:/var/lib/mysql
+      - ./volumes/mysql_vol/logs:/logs
+    networks:
+      - monit-js-network
+    environment:
+      - TZ=Asia/Shanghai
+
+  monit-js-redis:
+    restart: always
+    container_name: monit-js-redis
+    image: redis:6.2.6
+    volumes:
+      - ./volumes/redis_vol/conf/redis.conf:/etc/redis/redis.conf
+      - ./volumes/redis_vol/data:/data
+    ports:
+      - 2332:6379
+    command: redis-server --requirepass 123456
+    networks:
+      - monit-js-network
+    environment:
+      - TZ=Asia/Shanghai
+  
+networks:
+  monit-js-network:
+    driver: bridge
+    
