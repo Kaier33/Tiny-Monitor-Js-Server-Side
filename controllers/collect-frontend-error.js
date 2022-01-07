@@ -1,6 +1,7 @@
 const ErrorModel = require("../model/error");
 const IoRedis = require("ioredis");
-const redis = new IoRedis("redis://:123456@monit-js-redis:6379");
+const redis = new IoRedis("redis://:123456@monit-js-redis:6379"); // docker
+// const redis = new IoRedis("redis://:123456@127.0.0.1:2332"); // localhost
 class CollectFrontendError {
   static async reportErr(ctx) {
     ctx.body = "";
@@ -14,6 +15,9 @@ class CollectFrontendError {
       // console.log('type::', typeof(ctx.request.body))
       const body = JSON.parse(ctx.request.body);
       const data = JSON.stringify({
+        p_id: body.key,
+        ip: ctx.request.ip,
+        header: ctx.request.header,
         error_type: body.type || '',
         error_id: body.errorId || '',
         user_id: body.userId || '',
