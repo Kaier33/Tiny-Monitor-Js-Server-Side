@@ -1,4 +1,6 @@
 node_modules
 
-ssl/domain.crt
-ssl/domain.key
+ssl/*.crt
+ssl/*.key
+ssl/*.cer
+ssl/*.pem
