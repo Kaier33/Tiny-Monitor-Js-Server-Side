@@ -1,7 +1,8 @@
+const { MYREDIS_PASSWORD, MYREDIS_HOST, MYREDIS_PORT } = process.env
+const { serverLogger } = require('../middleware/log4js')
 const ErrorModel = require("../model/error");
 const IORedis = require("ioredis");
-const redis = new IORedis("redis://:123456@monit-js-redis:6379");
-// const redis = new IORedis("redis://:123456@127.0.0.1:2332");
+const redis = new IORedis(`redis://:${MYREDIS_PASSWORD}@${MYREDIS_HOST}:${MYREDIS_PORT}`);
 const processMessage = async (message) => {
   try {
     const data = JSON.parse(message[1][1]);
@@ -17,7 +18,8 @@ const processMessage = async (message) => {
       error_info: data.error_info,
     });
   } catch (error) {
-    console.log('error::', error)
+    console.log('error:', error)
+    serverLogger(error)
   }
   // console.log("Id: %s. Data: %O", message[0], message[1]);
 };

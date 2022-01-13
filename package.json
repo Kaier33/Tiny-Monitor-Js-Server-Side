@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --ignore node_modules/",
-    "start": "node index.js"
+    "dev": "cross-env NODE_ENV=development nodemon --ignore node_modules/",
+    "start": "cross-env NODE_ENV=production node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +24,8 @@
     "sequelize": "^6.8.0"
   },
   "devDependencies": {
+    "dotenv": "^11.0.0",
+    "cross-env": "^7.0.3",
     "nodemon": "^2.0.13"
   }
 }

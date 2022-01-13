@@ -7,27 +7,25 @@ const errorModel = sequelize.define(
     id: {
       type: Seq.INTEGER(11),
       primaryKey: true,
-      autoIncrement: true,
-      allowNull: true
+      autoIncrement: true
     },
     p_id: {
-      type: Seq.CHAR,
-      allowNull: true
+      type: Seq.STRING,
     },
     error_type: {
-      type: Seq.CHAR,
+      type: Seq.STRING,
     },
     error_id: {
-      type: Seq.CHAR,
+      type: Seq.STRING,
     },
     error_info: {
       type: Seq.STRING,
     },
     user_id: {
-      type: Seq.CHAR,
+      type: Seq.STRING,
     },
     ip: {
-      type: Seq.CHAR,
+      type: Seq.STRING,
       allowNull: true
     },
     cookie: {
@@ -38,10 +36,27 @@ const errorModel = sequelize.define(
       type: Seq.STRING,
       allowNull: true
     },
+    status: {
+      type: Seq.TINYINT,
+      allowNull: true
+    },
+    createdAt: {
+      type: Seq.DATE,
+      field: 'created_at',
+      allowNull: true,
+      defaultValue: Seq.NOW
+    },
+    updatedAt: {
+      type: Seq.DATE,
+      field: 'updated_at',
+      allowNull: true,
+      detaultValue: Seq.NOW
+    }
   },
   {
     freezeTableName: true,
-    timestamps: false,
+    createdAt: false,
+	  updatedAt: false,
   }
 );
 

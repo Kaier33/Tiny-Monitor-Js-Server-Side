@@ -1,13 +1,9 @@
+const { MYSQLDB_DATABASE, MYSQLDB_USER, MYSQLDB_ROOT_PASSWORD, MYSQLDB_HOST, MYSQLDB_PORT } = process.env
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize("monitor", "root", "123456", {
-  // host: '127.0.0.1',
-  // host: "192.168.1.101",
-  // host: "10.0.3.38",
-  // port: "2333",
-  
-  host: 'monit-js-db',
-  port: "3306",
-
+const sequelize = new Sequelize(MYSQLDB_DATABASE, MYSQLDB_USER, MYSQLDB_ROOT_PASSWORD, {
+  host: MYSQLDB_HOST,
+  port: MYSQLDB_PORT,
+  timezone: '+08:00',
   dialect: "mysql",
   pool: {
     max: 10,

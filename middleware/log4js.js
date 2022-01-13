@@ -47,15 +47,21 @@ function resLogger(ctx, costTime) {
   }
 }
 
+function serverLogger(err) {
+  if (err) {
+    _resLogger.info(err)
+  }
+}
+
 function logHandle() {
   return async (ctx, next) => {
     const start = new Date();
     await next();
-    if (ctx.response.status != 200) {
+    if (ctx.response.status > 299) {
       const ms = new Date() - start;
       resLogger(ctx, ms);
     }
   };
 }
 
-module.exports = { errLogger, resLogger, logHandle };
+module.exports = { errLogger, resLogger, logHandle, serverLogger };

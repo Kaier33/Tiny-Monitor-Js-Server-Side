@@ -1,1 +1,4 @@
 node_modules
+
+ssl/domain.crt
+ssl/domain.key
