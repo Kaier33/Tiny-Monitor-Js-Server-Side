@@ -1,7 +1,7 @@
 const { MYREDIS_PASSWORD, MYREDIS_HOST, MYREDIS_PORT } = process.env
 const ErrorModel = require("../model/error");
 const IoRedis = require("ioredis");
-const redis = new IoRedis(`redis://:${MYREDIS_PASSWORD}@${MYREDIS_HOST}:${MYREDIS_PORT}`); // localhost
+const redis = new IoRedis(`redis://:${MYREDIS_PASSWORD}@${MYREDIS_HOST}:${MYREDIS_PORT}`);
 class CollectFrontendError {
   static async reportErr(ctx) {
     ctx.body = "";
