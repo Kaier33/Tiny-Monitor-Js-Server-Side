@@ -1,7 +1,7 @@
 const ErrorModel = require("../model/error");
 
 class Analyse {
-  static async list(ctx) {
+  static async countAll(ctx) {
     try {
       const result = await ErrorModel.findAndCountAll();
       ctx.body = {

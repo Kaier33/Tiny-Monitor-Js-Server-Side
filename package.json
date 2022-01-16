@@ -13,8 +13,10 @@
   "dependencies": {
     "@koa/router": "^10.1.1",
     "ioredis": "^4.28.0",
+    "jsonwebtoken": "^8.5.1",
     "koa": "^2.13.3",
     "koa-bodyparser": "^4.3.0",
+    "koa-jwt": "^4.0.3",
     "koa2-cors": "^2.0.6",
     "log4js": "^6.3.0",
     "moment": "^2.29.1",
@@ -24,8 +26,8 @@
     "sequelize": "^6.8.0"
   },
   "devDependencies": {
-    "dotenv": "^11.0.0",
     "cross-env": "^7.0.3",
+    "dotenv": "^11.0.0",
     "nodemon": "^2.0.13"
   }
 }
