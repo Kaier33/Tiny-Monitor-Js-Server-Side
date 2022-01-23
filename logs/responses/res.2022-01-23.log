@@ -1,0 +1,86 @@
+[2022-01-23T17:01:38.176] [INFO] response - {
+  method: 'GET',
+  url: '/users',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: { message: 'Authentication Error' }
+  },
+  costTime: 8
+}
+[2022-01-23T19:19:57.919] [INFO] response - {
+  method: 'GET',
+  url: '/analyse/error-list?',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: { message: 'Authentication Error' }
+  },
+  costTime: 7
+}
+[2022-01-23T19:32:03.234] [INFO] response - {
+  method: 'GET',
+  url: '/analyse/error-list?page_size=5&page=1&p_id=test',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''5'' at line 1"
+    }
+  },
+  costTime: 22
+}
+[2022-01-23T19:35:11.144] [INFO] response - {
+  method: 'GET',
+  url: '/analyse/error-list?page_size=5&page=1&p_id=localhost',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''5'' at line 1"
+    }
+  },
+  costTime: 21
+}
+[2022-01-23T19:37:04.615] [INFO] response - {
+  method: 'GET',
+  url: '/analyse/error-list?page_size=5&page=1&p_id=localhost',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''5', 0' at line 1"
+    }
+  },
+  costTime: 21
+}

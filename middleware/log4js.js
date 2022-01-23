@@ -57,7 +57,7 @@ function logHandle() {
   return async (ctx, next) => {
     const start = new Date();
     await next();
-    if (ctx.response.status > 299) {
+    if (ctx.response.status >= 500) {
       const ms = new Date() - start;
       resLogger(ctx, ms);
     }
