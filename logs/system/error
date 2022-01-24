@@ -1,0 +1,84 @@
+[2022-01-24T09:49:53.881] [ERROR] error - {
+  method: 'GET',
+  url: '/monit/api/analyse/error/17',
+  body: {},
+  userAgent: undefined,
+  err: ReferenceError: code is not defined
+      at /Users/kaierchou/Desktop/demo/frontend-monitor/service/middleware/catch_exception.js:6:7
+      at processTicksAndRejections (internal/process/task_queues.js:95:5)
+      at async bodyParser (/Users/kaierchou/Desktop/demo/frontend-monitor/service/node_modules/koa-bodyparser/index.js:95:5)
+      at async cors (/Users/kaierchou/Desktop/demo/frontend-monitor/service/node_modules/koa2-cors/dist/index.js:91:9)
+      at async /Users/kaierchou/Desktop/demo/frontend-monitor/service/middleware/log4js.js:59:5
+}
+[2022-01-24T09:50:07.093] [ERROR] error - {
+  method: 'GET',
+  url: '/monit/api/analyse/error/17',
+  body: {},
+  userAgent: undefined,
+  err: ReferenceError: code is not defined
+      at /Users/kaierchou/Desktop/demo/frontend-monitor/service/middleware/catch_exception.js:6:7
+      at processTicksAndRejections (internal/process/task_queues.js:95:5)
+      at async bodyParser (/Users/kaierchou/Desktop/demo/frontend-monitor/service/node_modules/koa-bodyparser/index.js:95:5)
+      at async cors (/Users/kaierchou/Desktop/demo/frontend-monitor/service/node_modules/koa2-cors/dist/index.js:91:9)
+      at async /Users/kaierchou/Desktop/demo/frontend-monitor/service/middleware/log4js.js:59:5
+}
+[2022-01-24T09:50:21.358] [ERROR] error - {
+  method: 'GET',
+  url: '/monit/api/analyse/error/17',
+  body: {},
+  userAgent: undefined,
+  err: ReferenceError: code is not defined
+      at /Users/kaierchou/Desktop/demo/frontend-monitor/service/middleware/catch_exception.js:6:7
+      at processTicksAndRejections (internal/process/task_queues.js:95:5)
+      at async bodyParser (/Users/kaierchou/Desktop/demo/frontend-monitor/service/node_modules/koa-bodyparser/index.js:95:5)
+      at async cors (/Users/kaierchou/Desktop/demo/frontend-monitor/service/node_modules/koa2-cors/dist/index.js:91:9)
+      at async /Users/kaierchou/Desktop/demo/frontend-monitor/service/middleware/log4js.js:59:5
+}
+[2022-01-24T09:50:31.139] [ERROR] error - {
+  method: 'GET',
+  url: '/monit/api/analyse/error/17',
+  body: {},
+  userAgent: undefined,
+  err: ReferenceError: code is not defined
+      at /Users/kaierchou/Desktop/demo/frontend-monitor/service/middleware/catch_exception.js:6:7
+      at processTicksAndRejections (internal/process/task_queues.js:95:5)
+      at async bodyParser (/Users/kaierchou/Desktop/demo/frontend-monitor/service/node_modules/koa-bodyparser/index.js:95:5)
+      at async cors (/Users/kaierchou/Desktop/demo/frontend-monitor/service/node_modules/koa2-cors/dist/index.js:91:9)
+      at async /Users/kaierchou/Desktop/demo/frontend-monitor/service/middleware/log4js.js:59:5
+}
+[2022-01-24T09:50:41.110] [ERROR] error - {
+  method: 'GET',
+  url: '/monit/api/analyse/error/17',
+  body: {},
+  userAgent: undefined,
+  err: ReferenceError: code is not defined
+      at /Users/kaierchou/Desktop/demo/frontend-monitor/service/middleware/catch_exception.js:6:7
+      at processTicksAndRejections (internal/process/task_queues.js:95:5)
+      at async bodyParser (/Users/kaierchou/Desktop/demo/frontend-monitor/service/node_modules/koa-bodyparser/index.js:95:5)
+      at async cors (/Users/kaierchou/Desktop/demo/frontend-monitor/service/node_modules/koa2-cors/dist/index.js:91:9)
+      at async /Users/kaierchou/Desktop/demo/frontend-monitor/service/middleware/log4js.js:59:5
+}
+[2022-01-24T09:51:57.863] [ERROR] error - {
+  method: 'GET',
+  url: '/monit/api/analyse/error/17',
+  body: {},
+  userAgent: undefined,
+  err: ReferenceError: code is not defined
+      at /Users/kaierchou/Desktop/demo/frontend-monitor/service/middleware/catch_exception.js:6:7
+      at processTicksAndRejections (internal/process/task_queues.js:95:5)
+      at async bodyParser (/Users/kaierchou/Desktop/demo/frontend-monitor/service/node_modules/koa-bodyparser/index.js:95:5)
+      at async cors (/Users/kaierchou/Desktop/demo/frontend-monitor/service/node_modules/koa2-cors/dist/index.js:91:9)
+      at async /Users/kaierchou/Desktop/demo/frontend-monitor/service/middleware/log4js.js:59:5
+}
+[2022-01-24T09:52:05.840] [ERROR] error - {
+  method: 'GET',
+  url: '/monit/api/analyse/error/17',
+  body: {},
+  userAgent: undefined,
+  err: ReferenceError: code is not defined
+      at /Users/kaierchou/Desktop/demo/frontend-monitor/service/middleware/catch_exception.js:6:7
+      at processTicksAndRejections (internal/process/task_queues.js:95:5)
+      at async bodyParser (/Users/kaierchou/Desktop/demo/frontend-monitor/service/node_modules/koa-bodyparser/index.js:95:5)
+      at async cors (/Users/kaierchou/Desktop/demo/frontend-monitor/service/node_modules/koa2-cors/dist/index.js:91:9)
+      at async /Users/kaierchou/Desktop/demo/frontend-monitor/service/middleware/log4js.js:59:5
+}

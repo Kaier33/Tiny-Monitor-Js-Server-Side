@@ -24,7 +24,7 @@ class Auth {
       };
     } else {
       ctx.body = {
-        code: 401,
+        code: 403,
         message: "用户名或密码错误",
       };
     }

@@ -3,8 +3,15 @@ function catchException() {
     try {
       await next();
     } catch (err) {
-      ctx.body = { message: err.message || err };
-      ctx.status = 500;
+      if (err.status === 401) {
+        ctx.body = {
+          code: 50014,
+          message: err.message || err 
+        };
+      } else {
+        ctx.body = { message: err.message || err };
+        ctx.status = 500;
+      }
     }
   };
 }
