@@ -1,0 +1,18 @@
+[2022-03-24T00:30:50.562] [INFO] response - {
+  method: 'POST',
+  url: '/monit/api/auth/login',
+  body: { username: 'asdasd', password: 'asdads' },
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': 'http://localhost:1024',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: 'WHERE parameter "username" has invalid "undefined" value'
+    }
+  },
+  costTime: 9
+}

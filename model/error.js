@@ -28,6 +28,11 @@ const errorModel = sequelize.define(
       type: Seq.STRING(5000),
       comment: '错误信息'
     },
+    exception_time: {
+      type: Seq.STRING(20),
+      allowNull: false,
+      comment: '错误发生时间'
+    },
     user_id: {
       type: Seq.STRING(50),
       comment: '用户id'

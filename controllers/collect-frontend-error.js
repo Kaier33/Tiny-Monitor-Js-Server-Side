@@ -31,6 +31,7 @@ class CollectFrontendError {
         error_id: "2333333333",
         user_id: "2333333333",
         error_info: "(¦3[▓▓] ",
+        exception_time: new Date().getTime()
       });
       await redis.xadd("mystream", 'MAXLEN', 500, "*", "reportData", data);
     } catch (error) {
@@ -49,6 +50,11 @@ class CollectFrontendError {
     } catch (error) {
       console.log("error::", error);
     }
+  }
+
+  static async failed(ctx) {
+    ctx.body = 'failed'
+    ctx.status = 414;
   }
 }
 module.exports = CollectFrontendError;

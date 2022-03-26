@@ -1,8 +1,22 @@
 const UsersModel = require("../model/users");
 class Users {
+  static async userInfo(ctx) {
+    const result = await UsersModel.findOne({
+      attributes: ["u_id", "username", "nickname", "avatar"],
+      where: {
+        u_id: ctx.state.user.u_id,
+      },
+    });
+    ctx.body = {
+      code: 200,
+      message: "ok",
+      data: result,
+    };
+  }
+
   static async listUsers(ctx) {
     const result = await UsersModel.findAll({
-      attributes: ["id", "user_name"],
+      attributes: ["id", "u_id", "username", "nickname", "email", "avatar"],
       where: {
         status: 1,
       },

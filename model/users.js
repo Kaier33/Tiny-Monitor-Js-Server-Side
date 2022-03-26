@@ -14,7 +14,7 @@ const usersModel = sequelize.define(
       allowNull: false,
       comment: '用户id'
     },
-    user_name: {
+    username: {
       type: Seq.STRING(30),
       allowNull: false,
       comment: '账号'

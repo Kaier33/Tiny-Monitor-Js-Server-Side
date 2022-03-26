@@ -1,0 +1,96 @@
+[2022-03-25T19:22:17.995] [INFO] response - {
+  method: 'POST',
+  url: '/monit/api/project',
+  body: '{\n' +
+    '    "p_name": "demo1",\n' +
+    '    "p_id": "asd11asdad4f",\n' +
+    '    "p_desc": "postman write desc",\n' +
+    '    "p_tech": "vue",\n' +
+    '    "creator_id": "b052b0e75b"\n' +
+    '}',
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: 'WHERE parameter "p_name" has invalid "undefined" value'
+    }
+  },
+  costTime: 23
+}
+[2022-03-25T19:26:32.325] [INFO] response - {
+  method: 'POST',
+  url: '/monit/api/project',
+  body: '{\n' +
+    '    "p_name": "demo1",\n' +
+    '    "p_id": "asd11asdad4f",\n' +
+    '    "p_desc": "postman write desc",\n' +
+    '    "p_tech": "vue",\n' +
+    '    "creator_id": "b052b0e75b"\n' +
+    '}',
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: 'WHERE parameter "p_name" has invalid "undefined" value'
+    }
+  },
+  costTime: 19
+}
+[2022-03-25T19:26:42.238] [INFO] response - {
+  method: 'POST',
+  url: '/monit/api/project',
+  body: '{\n' +
+    '    "p_name": "demo1",\n' +
+    '    "p_id": "asd11asdad4f",\n' +
+    '    "p_desc": "postman write desc",\n' +
+    '    "p_tech": "vue",\n' +
+    '    "creator_id": "b052b0e75b"\n' +
+    '}',
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: 'WHERE parameter "p_name" has invalid "undefined" value'
+    }
+  },
+  costTime: 2
+}
+[2022-03-25T19:49:51.643] [INFO] response - {
+  method: 'POST',
+  url: '/monit/api/project',
+  body: {
+    p_name: 'demo1',
+    p_id: 'asd11asdad4f',
+    p_desc: 'postman write desc',
+    p_tech: 'vue',
+    creator_id: 'b052b0e75b'
+  },
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: 'notNull Violation: user_to_project.u_id cannot be null'
+    }
+  },
+  costTime: 38
+}
