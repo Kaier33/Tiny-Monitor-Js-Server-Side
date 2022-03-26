@@ -2,7 +2,6 @@ const path = require("path");
 const fs = require("fs");
 let rawdata = fs.readFileSync(path.join(__dirname, "./project-blacklist.json"));
 let blacklist = JSON.parse(rawdata).projectsBlacklist;
-console.log("源文件 这里只能加载一次:", blacklist);
 
 const recordToFile = function (data) {
   fs.writeFileSync(path.join(__dirname, "./project-blacklist.json"), data);

@@ -1,4 +1,5 @@
-const { MYREDIS_PASSWORD, MYREDIS_HOST, MYREDIS_PORT } = process.env
+const { blacklist } = require("../config/projects-blacklist");
+const { MYREDIS_PASSWORD, MYREDIS_HOST, MYREDIS_PORT } = process.env;
 const ErrorModel = require("../model/error");
 const IoRedis = require("ioredis");
 const redis = new IoRedis(`redis://:${MYREDIS_PASSWORD}@${MYREDIS_HOST}:${MYREDIS_PORT}`);
@@ -6,7 +7,8 @@ class CollectFrontendError {
   static async reportErr(ctx) {
     ctx.body = "";
     try {
-      const body = JSON.parse(ctx.request.body);
+      const body = typeof(ctx.request.body) === 'string' ?  JSON.parse(ctx.request.body) : ctx.request.body;
+      if (blacklist.includes(body.key)) return
       const data = JSON.stringify({
         p_id: body.key,
         ip: ctx.request.ip,
