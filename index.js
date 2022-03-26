@@ -1,3 +1,4 @@
+require("./config/projects-blacklist");
 require("./config/dotenv");
 require("./redis");
 const https = require("https");
@@ -10,6 +11,7 @@ const { protectedRouter, unprotectedRouter } = require("./router");
 const { logHandle, errLogger } = require("./middleware/log4js");
 const catchException = require("./middleware/catch_exception");
 const { JWT_SECRET } = require("./config/constants");
+
 
 const app = new Koa();
 app.use(logHandle());
