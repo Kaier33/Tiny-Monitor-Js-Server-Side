@@ -7,10 +7,17 @@ const recordToFile = function (data) {
   fs.writeFileSync(path.join(__dirname, "./project-blacklist.json"), data);
 };
 
+const limitArray = function (arr, limit) {
+  if (arr.length > limit) {
+    arr.splice(0, arr.length - limit);
+  }
+};
+
 const blacklistPush = function (name) {
   if (typeof name !== "string") return;
   if (blacklist.indexOf(name) == -1) {
     blacklist.push(name);
+    limitArray(blacklist, 30);
     recordToFile(JSON.stringify({ projectsBlacklist: blacklist }));
   }
 };

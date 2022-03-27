@@ -1,12 +1,12 @@
 const ProjectsModel = require("../model/projects");
 const UserToProjectModel = require("../model/user_to_project");
-const sequelize = require("../database/index")
+const sequelize = require("../database/index");
 
 const { customAlphabet } = require("nanoid/async");
 
-class Projects {
-  static async list(ctx) {
-    const sql = `
+const find_own_projects = function (u_id) {
+  if (typeof u_id === "string") {
+    return `
       SELECT 
         projects.p_id,
         projects.p_name,
@@ -18,17 +18,70 @@ class Projects {
         ON user_to_project.u_id = users.u_id
       LEFT JOIN projects 
         ON user_to_project.p_id = projects.p_id
-      WHERE users.u_id = "${ctx.state.user.u_id}"
-    `
-    const data = await sequelize.query(sql, {
-      type: sequelize.QueryTypes.SELECT,
-      raw: true,
-      logging: false
-    })
+      WHERE users.u_id = "${u_id}";
+    `;
+  }
+};
+
+const inStatement = function (arr) {
+  let str = `p_id IN (`;
+  arr.forEach((ele) => {
+    str += `"${ele}",`;
+  });
+  return str.slice(0, str.length - 1) + ")";
+};
+
+const last_24_hours_statistics = function (p_ids = []) {
+  if (Array.isArray(p_ids)) {
+    return `
+      SELECT 
+        p_id, FROM_UNIXTIME(exception_time/1000, '%Y-%m-%d %H') as time, count(*) as count
+      FROM
+        error
+      WHERE
+        FROM_UNIXTIME(exception_time/1000, '%Y-%m-%d %H:%m:%s') > DATE_SUB(NOW(), INTERVAL 24 HOUR)
+      AND
+        ${inStatement(p_ids)}
+      GROUP BY 
+        time, p_id
+      ORDER BY
+        time;
+    `;
+  }
+};
+
+class Projects {
+  static async list(ctx) {
+    const project_list = await sequelize.query(
+      find_own_projects(ctx.state.user.u_id),
+      {
+        type: sequelize.QueryTypes.SELECT,
+        raw: true,
+        logging: false,
+      }
+    );
+    const statistics_data = await sequelize.query(
+      last_24_hours_statistics(project_list.map((item) => item.p_id)),
+      {
+        type: sequelize.QueryTypes.SELECT,
+        raw: true,
+        logging: true,
+      }
+    );
+    project_list.forEach((p_ele) => {
+      p_ele.statistics_data = [];
+      statistics_data.forEach((s_ele) => {
+        if (p_ele.p_id === s_ele.p_id) {
+          p_ele.statistics_data.push(s_ele);
+        }
+      });
+    });
     ctx.body = {
       code: 200,
       message: "ok",
-      data,
+      data: {
+        list: project_list,
+      },
     };
   }
 
@@ -51,7 +104,7 @@ class Projects {
       await ProjectsModel.create(project);
       await UserToProjectModel.create({
         p_id,
-        u_id: ctx.state.user.u_id
+        u_id: ctx.state.user.u_id,
       });
       ctx.body = {
         code: 200,

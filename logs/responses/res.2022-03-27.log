@@ -1,0 +1,202 @@
+[2022-03-27T02:20:44.580] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: { message: 'sql.trim is not a function' }
+  },
+  costTime: 6
+}
+[2022-03-27T02:22:35.113] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: { message: "Unknown column '1bafadc309' in 'where clause'" }
+  },
+  costTime: 9
+}
+[2022-03-27T02:30:49.283] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: { message: "Unknown column '1bafadc309' in 'where clause'" }
+  },
+  costTime: 10
+}
+[2022-03-27T02:31:29.441] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: { message: "Unknown column '1bafadc309' in 'where clause'" }
+  },
+  costTime: 10
+}
+[2022-03-27T02:40:48.622] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: { message: 'str is not defined' }
+  },
+  costTime: 5
+}
+[2022-03-27T02:41:15.251] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: { message: 'str is not defined' }
+  },
+  costTime: 5
+}
+[2022-03-27T02:41:48.067] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')\n" +
+        '      GROUP BY \n' +
+        '        time\n' +
+        '      ORDER BY\n' +
+        "        time' at line 2"
+    }
+  },
+  costTime: 9
+}
+[2022-03-27T02:42:48.556] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')\n" +
+        '      GROUP BY \n' +
+        '        time\n' +
+        '      ORDER BY\n' +
+        "        time' at line 2"
+    }
+  },
+  costTime: 9
+}
+[2022-03-27T02:55:26.074] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')\n" +
+        '      GROUP BY \n' +
+        '        time\n' +
+        '      ORDER BY\n' +
+        "        time' at line 2"
+    }
+  },
+  costTime: 9
+}
+[2022-03-27T02:56:41.826] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')\n" +
+        '      GROUP BY \n' +
+        '        time\n' +
+        '      ORDER BY\n' +
+        "        time' at line 2"
+    }
+  },
+  costTime: 12
+}
+[2022-03-27T02:57:23.334] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: "Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'monitor.error.p_id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by"
+    }
+  },
+  costTime: 10
+}
