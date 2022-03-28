@@ -30,7 +30,7 @@ protectedRouter.delete("/users/:id", Users.deleteUser);
 protectedRouter.get("/project", Projects.list);
 protectedRouter.post("/project", Projects.create);
 protectedRouter.put("/project", Projects.update);
-protectedRouter.delete("/project", Projects.delete);
+protectedRouter.delete("/project/:p_id", Projects.delete);
 protectedRouter.post("/project/invite", Projects.invite);
 
 protectedRouter.get("/analyse/error-list", Analyse.errorList);

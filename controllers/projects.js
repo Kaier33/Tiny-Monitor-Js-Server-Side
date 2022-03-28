@@ -1,3 +1,4 @@
+const ErrorModel = require("../model/error");
 const ProjectsModel = require("../model/projects");
 const UserToProjectModel = require("../model/user_to_project");
 const sequelize = require("../database/index");
@@ -65,7 +66,7 @@ class Projects {
       {
         type: sequelize.QueryTypes.SELECT,
         raw: true,
-        logging: true,
+        logging: false,
       }
     );
     project_list.forEach((p_ele) => {
@@ -121,7 +122,41 @@ class Projects {
 
   static async update(ctx) {}
 
-  static async delete(ctx) {}
+  static async delete(ctx) {
+    const own = await UserToProjectModel.findOne({
+      where: {
+        u_id: ctx.state.user.u_id,
+        p_id: ctx.request.params.p_id,
+      },
+    });
+    if (own) {
+      await ProjectsModel.destroy({
+        where: {
+          p_id: ctx.request.params.p_id,
+        },
+      });
+      await UserToProjectModel.destroy({
+        where: {
+          p_id: ctx.request.params.p_id,
+          u_id: ctx.state.user.u_id,
+        },
+      });
+      await ErrorModel.destroy({
+        where: {
+          p_id: ctx.request.params.p_id,
+        },
+      });
+      ctx.body = {
+        code: 200,
+        message: "删除成功",
+      };
+    } else {
+      ctx.body = {
+        code: 401,
+        message: "账号无权限进行该操作!",
+      };
+    }
+  }
 
   static async invite(ctx) {}
 }

@@ -1,0 +1,16 @@
+[2022-03-29T00:26:10.798] [INFO] response - {
+  method: 'DELETE',
+  url: '/monit/api/project/6f551a49d3',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': 'http://localhost:1024',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: { message: 'Error.destroy is not a function' }
+  },
+  costTime: 18
+}
