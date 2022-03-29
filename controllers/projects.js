@@ -61,7 +61,9 @@ const member_list = function (p_id) {
 	    u.avatar 
     FROM
 	    users AS u
-	    INNER JOIN user_to_project AS utp ON utp.u_id = u.u_id 
+	    INNER JOIN user_to_project AS utp ON utp.u_id = u.u_id
+    AND
+      u.status = 1
 	  AND 
       utp.p_id = '${p_id}';
   `;

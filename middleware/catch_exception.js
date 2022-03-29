@@ -4,7 +4,7 @@ function catchException() {
       await next();
     } catch (err) {
       if (err.status === 401) {
-        ctx.status = 401
+        ctx.status = 402
         ctx.body = {
           code: 50014,
           message: err.message || err 
