@@ -24,7 +24,7 @@ const find_own_projects = function (u_id) {
   }
 };
 
-const inStatement = function (arr) {
+const in_statement = function (arr) {
   let str = `p_id IN (`;
   arr.forEach((ele) => {
     str += `"${ele}",`;
@@ -42,13 +42,29 @@ const last_24_hours_statistics = function (p_ids = []) {
       WHERE
         FROM_UNIXTIME(exception_time/1000, '%Y-%m-%d %H:%m:%s') > DATE_SUB(NOW(), INTERVAL 24 HOUR)
       AND
-        ${inStatement(p_ids)}
+        ${in_statement(p_ids)}
       GROUP BY 
         time, p_id
       ORDER BY
         time;
     `;
   }
+};
+
+const member_list = function (p_id) {
+  return `
+    SELECT
+	    u.u_id,
+	    u.username,
+	    u.nickname,
+	    u.email,
+	    u.avatar 
+    FROM
+	    users AS u
+	    INNER JOIN user_to_project AS utp ON utp.u_id = u.u_id 
+	  AND 
+      utp.p_id = '${p_id}';
+  `;
 };
 
 class Projects {
@@ -159,6 +175,29 @@ class Projects {
   }
 
   static async invite(ctx) {}
+
+  static async info(ctx) {
+    const p_id = ctx.request.params.p_id;
+    const projectInfo = await ProjectsModel.findOne({
+      attributes: ["p_id", "p_name", "p_desc", "p_tech", "creator_id"],
+      where: {
+        p_id,
+      },
+    });
+    const userIds = await sequelize.query(member_list(p_id), {
+      type: sequelize.QueryTypes.SELECT,
+      raw: true,
+      logging: false,
+    });
+    ctx.body = {
+      code: 200,
+      data: {
+        projectInfo,
+        memberList: userIds,
+      },
+      message: "ok",
+    };
+  }
 }
 
 module.exports = Projects;

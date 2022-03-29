@@ -32,6 +32,7 @@ protectedRouter.post("/project", Projects.create);
 protectedRouter.put("/project", Projects.update);
 protectedRouter.delete("/project/:p_id", Projects.delete);
 protectedRouter.post("/project/invite", Projects.invite);
+protectedRouter.get("/project/:p_id", Projects.info);
 
 protectedRouter.get("/analyse/error-list", Analyse.errorList);
 protectedRouter.get("/analyse/error/:id", Analyse.errorDetail);
