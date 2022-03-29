@@ -36,5 +36,6 @@ protectedRouter.get("/project/:p_id", Projects.info);
 
 protectedRouter.get("/analyse/error-list", Analyse.errorList);
 protectedRouter.get("/analyse/error/:id", Analyse.errorDetail);
+protectedRouter.get("/analyse/line-chart-error-list",Analyse.lineChartErrorList)
 
 module.exports = { protectedRouter, unprotectedRouter };
