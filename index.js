@@ -1,4 +1,5 @@
-require("./config/projects-blacklist");
+// todo: 黑白名单改为redis缓存
+// require("./config/projects-blacklist");
 require("./config/dotenv");
 require("./redis");
 const https = require("https");

@@ -79,22 +79,24 @@ class Projects {
         logging: false,
       }
     );
-    const statistics_data = await sequelize.query(
-      last_24_hours_statistics(project_list.map((item) => item.p_id)),
-      {
-        type: sequelize.QueryTypes.SELECT,
-        raw: true,
-        logging: false,
-      }
-    );
-    project_list.forEach((p_ele) => {
-      p_ele.statistics_data = [];
-      statistics_data.forEach((s_ele) => {
-        if (p_ele.p_id === s_ele.p_id) {
-          p_ele.statistics_data.push(s_ele);
+    if (project_list.length) {
+      const statistics_data = await sequelize.query(
+        last_24_hours_statistics(project_list.map((item) => item.p_id)),
+        {
+          type: sequelize.QueryTypes.SELECT,
+          raw: true,
+          logging: false,
         }
+      );
+      project_list.forEach((p_ele) => {
+        p_ele.statistics_data = [];
+        statistics_data.forEach((s_ele) => {
+          if (p_ele.p_id === s_ele.p_id) {
+            p_ele.statistics_data.push(s_ele);
+          }
+        });
       });
-    });
+    }
     ctx.body = {
       code: 200,
       message: "ok",
@@ -111,7 +113,7 @@ class Projects {
       },
     });
     if (!exist) {
-      const nanoid = customAlphabet("1234567890abcdef", 10);
+      const nanoid = customAlphabet("1234567890abcdefghizklmnopqrstuvwsyzABCDEFGHIZKLMNOPQRSTUVWSYZ", 15);
       const p_id = await nanoid();
       const project = {
         p_id,

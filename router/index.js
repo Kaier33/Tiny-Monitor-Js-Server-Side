@@ -10,7 +10,6 @@ const unprotectedRouter = new Router();
 unprotectedRouter.post("/report-err", CollectFrontendError.reportErr);
 unprotectedRouter.get("/report-test", CollectFrontendError.performanceTest);
 unprotectedRouter.delete("/delete-test", CollectFrontendError.deleteTestData);
-unprotectedRouter.get("/failed", CollectFrontendError.failed);
 
 unprotectedRouter.post("/monit/api/auth/login", Auth.login);
 unprotectedRouter.post("/monit/api/auth/register", Auth.register);

@@ -1,0 +1,88 @@
+[2022-03-31T17:53:30.239] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')\n" +
+        '      GROUP BY \n' +
+        '        time, p_id\n' +
+        '      ORDER BY\n' +
+        "        time' at line 2"
+    }
+  },
+  costTime: 8
+}
+[2022-03-31T17:53:51.946] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')\n" +
+        '      GROUP BY \n' +
+        '        time, p_id\n' +
+        '      ORDER BY\n' +
+        "        time' at line 2"
+    }
+  },
+  costTime: 6
+}
+[2022-03-31T17:54:33.155] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')\n" +
+        '      GROUP BY \n' +
+        '        time, p_id\n' +
+        '      ORDER BY\n' +
+        "        time' at line 2"
+    }
+  },
+  costTime: 12
+}
+[2022-03-31T18:05:55.031] [INFO] response - {
+  method: 'GET',
+  url: '/monit/api/project',
+  body: {},
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')\n" +
+        '      GROUP BY \n' +
+        '        time, p_id\n' +
+        '      ORDER BY\n' +
+        "        time' at line 2"
+    }
+  },
+  costTime: 12
+}

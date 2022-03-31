@@ -53,10 +53,5 @@ class CollectFrontendError {
       console.log("error::", error);
     }
   }
-
-  static async failed(ctx) {
-    ctx.body = 'failed'
-    ctx.status = 414;
-  }
 }
 module.exports = CollectFrontendError;

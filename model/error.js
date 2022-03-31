@@ -57,6 +57,11 @@ const errorModel = sequelize.define(
       allowNull: true,
       comment: '用户操作轨迹'
     },
+    sdk_version: {
+      type: Seq.STRING(10),
+      allowNull: true,
+      comment: 'sdk版本'
+    },
     environment: {
       type: Seq.STRING(10),
       defaultValue: 'prod',

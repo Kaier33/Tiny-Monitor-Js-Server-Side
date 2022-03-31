@@ -97,6 +97,7 @@ class Analyse {
   static async errorDetail(ctx) {
     const { id } = ctx.request.params;
     const result = await ErrorModel.findOne({
+      attributes: { exclude: ["status", "createdAt", "updatedAt"] },
       where: {
         id: id,
       },
