@@ -113,7 +113,7 @@ class Projects {
       },
     });
     if (!exist) {
-      const nanoid = customAlphabet("1234567890abcdefghizklmnopqrstuvwsyzABCDEFGHIZKLMNOPQRSTUVWSYZ", 15);
+      const nanoid = customAlphabet("1234567890abcdefghizklmnopqrstuvwxyzABCDEFGHIZKLMNOPQRSTUVWXYZ", 15);
       const p_id = await nanoid();
       const project = {
         p_id,
