@@ -8,15 +8,16 @@ class CollectFrontendError {
     ctx.body = "";
     try {
       const body = typeof(ctx.request.body) === 'string' ?  JSON.parse(ctx.request.body) : ctx.request.body;
-      if (blacklist.includes(body.key)) return
+      if (blacklist.includes(body.error_info.key)) return
       const data = JSON.stringify({
-        p_id: body.key,
+        p_id: body.error_info.key,
         ip: ctx.request.ip,
         header: ctx.request.header,
-        error_type: body.type || '',
-        error_id: body.errorId || '',
-        user_id: body.userId || '',
-        error_info: ctx.request.body,
+        error_type: body.error_info.type || '',
+        error_id: body.error_info.errorId || '',
+        user_id: body.error_info.userId || '',
+        error_info: body.error_info,
+        breadcrumb_trail: body.breadcrumb_trail
       });
       await redis.xadd("mystream", 'MAXLEN', 500, "*", "reportData", data);
     } catch (error) {

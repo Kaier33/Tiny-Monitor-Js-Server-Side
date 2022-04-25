@@ -53,7 +53,7 @@ const errorModel = sequelize.define(
       comment: 'header'
     },
     breadcrumb_trail: {
-      type: Seq.STRING(5000),
+      type: Seq.TEXT,
       allowNull: true,
       comment: '用户操作轨迹'
     },

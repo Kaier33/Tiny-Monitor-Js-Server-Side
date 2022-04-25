@@ -1,0 +1,54 @@
+[2022-04-25T15:23:55.063] [INFO] response - ValidationError [SequelizeValidationError]: notNull Violation: error.p_id cannot be null
+    at InstanceValidator._validate (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/instance-validator.js:78:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async InstanceValidator._validateAndRunHooks (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/instance-validator.js:111:7)
+    at async InstanceValidator.validate (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/instance-validator.js:93:12)
+    at async model.save (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/model.js:3910:7)
+    at async Function.create (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/model.js:2217:12)
+    at async processMessage (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/redis/index.js:11:5) {
+  errors: [
+    ValidationErrorItem {
+      message: 'error.p_id cannot be null',
+      type: 'notNull Violation',
+      path: 'p_id',
+      value: null,
+      origin: 'CORE',
+      instance: [error],
+      validatorKey: 'is_null',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ]
+}
+[2022-04-25T15:39:41.200] [INFO] response - TypeError: Cannot read properties of undefined (reading 'timestamp')
+    at processMessage (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/redis/index.js:19:39)
+    at Array.forEach (<anonymous>)
+    at listenForMessage (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/redis/index.js:31:12)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-25T15:43:26.734] [INFO] response - TypeError: Cannot read properties of undefined (reading 'timestamp')
+    at processMessage (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/redis/index.js:20:39)
+    at Array.forEach (<anonymous>)
+    at listenForMessage (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/redis/index.js:31:12)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-25T15:47:28.007] [INFO] response - ValidationError [SequelizeValidationError]: string violation: error_info cannot be an array or an object
+    at InstanceValidator._validate (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/instance-validator.js:78:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async InstanceValidator._validateAndRunHooks (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/instance-validator.js:111:7)
+    at async InstanceValidator.validate (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/instance-validator.js:93:12)
+    at async model.save (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/model.js:3910:7)
+    at async Function.create (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/model.js:2217:12)
+    at async processMessage (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/redis/index.js:11:5) {
+  errors: [
+    ValidationErrorItem {
+      message: 'error_info cannot be an array or an object',
+      type: 'string violation',
+      path: 'error_info',
+      value: [Object],
+      origin: 'CORE',
+      instance: [error],
+      validatorKey: 'not_a_string',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ]
+}

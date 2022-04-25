@@ -1,0 +1,44 @@
+[2022-04-24T16:53:30.573] [INFO] response - ValidationError [SequelizeValidationError]: string violation: breadcrumb_trail cannot be an array or an object
+    at InstanceValidator._validate (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/instance-validator.js:78:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async InstanceValidator._validateAndRunHooks (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/instance-validator.js:111:7)
+    at async InstanceValidator.validate (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/instance-validator.js:93:12)
+    at async model.save (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/model.js:3910:7)
+    at async Function.create (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/model.js:2217:12)
+    at async processMessage (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/redis/index.js:10:5) {
+  errors: [
+    ValidationErrorItem {
+      message: 'breadcrumb_trail cannot be an array or an object',
+      type: 'string violation',
+      path: 'breadcrumb_trail',
+      value: [Array],
+      origin: 'CORE',
+      instance: [error],
+      validatorKey: 'not_a_string',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ]
+}
+[2022-04-24T16:53:30.580] [INFO] response - ValidationError [SequelizeValidationError]: string violation: breadcrumb_trail cannot be an array or an object
+    at InstanceValidator._validate (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/instance-validator.js:78:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async InstanceValidator._validateAndRunHooks (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/instance-validator.js:111:7)
+    at async InstanceValidator.validate (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/instance-validator.js:93:12)
+    at async model.save (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/model.js:3910:7)
+    at async Function.create (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/node_modules/sequelize/lib/model.js:2217:12)
+    at async processMessage (/Users/kaierchou/Desktop/OpenSource/frontend-monitor/Tiny-Monitor-Js-Server/redis/index.js:10:5) {
+  errors: [
+    ValidationErrorItem {
+      message: 'breadcrumb_trail cannot be an array or an object',
+      type: 'string violation',
+      path: 'breadcrumb_trail',
+      value: [Array],
+      origin: 'CORE',
+      instance: [error],
+      validatorKey: 'not_a_string',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ]
+}

@@ -15,8 +15,9 @@ const processMessage = async (message) => {
       error_type: data.error_type,
       error_id: data.error_id,
       user_id: data.user_id,
-      error_info: data.error_info,
-      exception_time: data.error_info.timestamp || new Date().getTime()
+      error_info: JSON.stringify(data.error_info),
+      exception_time: data.error_info.timestamp || new Date().getTime(),
+      breadcrumb_trail: JSON.stringify(data.breadcrumb_trail)
     });
   } catch (error) {
     console.log('error:', error)
