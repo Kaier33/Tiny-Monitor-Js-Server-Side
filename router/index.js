@@ -25,6 +25,7 @@ protectedRouter.get("/users", Users.listUsers);
 protectedRouter.get("/users/:id", Users.userDetail);
 protectedRouter.put("/users/:id", Users.updateUser);
 protectedRouter.delete("/users/:id", Users.deleteUser);
+protectedRouter.post("/user/change-password", Users.changePassword);
 
 protectedRouter.get("/project", Projects.list);
 protectedRouter.post("/project", Projects.create);

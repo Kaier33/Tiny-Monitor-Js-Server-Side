@@ -1,0 +1,52 @@
+[2022-04-26T11:15:29.881] [INFO] response - {
+  method: 'POST',
+  url: '/monit/api/user/change-password',
+  body: { oldpass: '1234567' },
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: 'The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined'
+    }
+  },
+  costTime: 11
+}
+[2022-04-26T11:16:06.060] [INFO] response - {
+  method: 'POST',
+  url: '/monit/api/user/change-password',
+  body: { oldpass: '1234567' },
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: {
+      message: 'The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined'
+    }
+  },
+  costTime: 8
+}
+[2022-04-26T11:19:01.043] [INFO] response - {
+  method: 'POST',
+  url: '/monit/api/user/change-password',
+  body: { oldpass: '123456', password: '1234567' },
+  response: {
+    status: 500,
+    message: 'Internal Server Error',
+    header: [Object: null prototype] {
+      vary: 'Origin',
+      'access-control-allow-origin': '*',
+      'content-type': 'application/json; charset=utf-8'
+    },
+    body: { message: 'Users.update is not a function' }
+  },
+  costTime: 29
+}
