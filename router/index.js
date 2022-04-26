@@ -21,9 +21,9 @@ protectedRouter.post("/general/projects-blacklist", General.addToProjectsBlackLi
 protectedRouter.delete("/general/projects-blacklist/:p_id", General.delFromProjectsBlackList);
 
 protectedRouter.get("/user", Users.userInfo);
+protectedRouter.put("/user", Users.updateUser);
 protectedRouter.get("/users", Users.listUsers);
 protectedRouter.get("/users/:id", Users.userDetail);
-protectedRouter.put("/users/:id", Users.updateUser);
 protectedRouter.delete("/users/:id", Users.deleteUser);
 protectedRouter.post("/user/change-password", Users.changePassword);
 

@@ -3,7 +3,7 @@ const { SHA256 } = require("../utils/tool");
 class Users {
   static async userInfo(ctx) {
     const result = await UsersModel.findOne({
-      attributes: ["u_id", "username", "nickname", "avatar"],
+      attributes: ["u_id", "username", "nickname", "avatar", "email"],
       where: {
         u_id: ctx.state.user.u_id,
       },
@@ -37,7 +37,27 @@ class Users {
   }
 
   static async updateUser(ctx) {
-    ctx.body = "update user";
+    const { nickname = '', email = '', avatar = '' } = ctx.request.body
+    await UsersModel.update({
+      nickname,
+      email,
+      avatar
+    }, {
+      where: {
+        u_id: ctx.state.user.u_id
+      }
+    })
+    const user = await UsersModel.findOne({
+      attributes: ['username', 'nickname', 'nickname', 'email', 'avatar'],
+      where: {
+        u_id: ctx.state.user.u_id
+      }
+    })
+    ctx.body = {
+      code: 200,
+      message: '更新成功',
+      data: user
+    }
   }
 
   static async deleteUser(ctx) {

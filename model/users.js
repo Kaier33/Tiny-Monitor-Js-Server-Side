@@ -25,7 +25,7 @@ const usersModel = sequelize.define(
       comment: '密码'
     },
     nickname: {
-      type: Seq.STRING(10),
+      type: Seq.STRING(20),
       allowNull: true,
       comment: '昵称'
     },
