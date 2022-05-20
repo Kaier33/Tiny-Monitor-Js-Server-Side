@@ -20,7 +20,7 @@ const usersModel = sequelize.define(
       comment: '账号'
     },
     password: {
-      type: Seq.STRING(100),
+      type: Seq.STRING(200),
       allowNull: false,
       comment: '密码'
     },

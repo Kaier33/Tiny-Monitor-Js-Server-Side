@@ -2,7 +2,7 @@ FROM node:14.18.3-alpine as build
 
 ADD . /monitjs-node-server
 WORKDIR /monitjs-node-server
-RUN npm install --registry=https://registry.npm.taobao.org
+RUN npm install --registry=https://registry.npmmirror.com
 
 FROM node:14.18.3-alpine
 COPY --from=build /monitjs-node-server /monitjs-node-server

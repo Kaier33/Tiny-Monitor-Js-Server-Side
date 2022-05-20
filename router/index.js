@@ -1,4 +1,7 @@
 const Router = require("@koa/router");
+const ValidateParamsMiddleware = require('../middleware/validate_params');
+const { authSchema, generalSchema, userScheme, projectsSchema } = require("../validator/index");
+
 const CollectFrontendError = require("../controllers/collect-frontend-error");
 const Users = require("../controllers/users");
 const Auth = require("../controllers/auth");
@@ -11,8 +14,8 @@ unprotectedRouter.post("/report-err", CollectFrontendError.reportErr);
 unprotectedRouter.get("/report-test", CollectFrontendError.performanceTest);
 unprotectedRouter.delete("/delete-test", CollectFrontendError.deleteTestData);
 
-unprotectedRouter.post("/monit/api/auth/login", Auth.login);
-unprotectedRouter.post("/monit/api/auth/register", Auth.register);
+unprotectedRouter.post("/monit/api/auth/login", ValidateParamsMiddleware(authSchema.loginSchema), Auth.login);
+unprotectedRouter.post("/monit/api/auth/register", ValidateParamsMiddleware(authSchema.registerSchema), Auth.register);
 
 const protectedRouter = new Router({ prefix: "/monit/api" });
 
@@ -21,14 +24,14 @@ protectedRouter.post("/general/projects-blacklist", General.addToProjectsBlackLi
 protectedRouter.delete("/general/projects-blacklist/:p_id", General.delFromProjectsBlackList);
 
 protectedRouter.get("/user", Users.userInfo);
-protectedRouter.put("/user", Users.updateUser);
+protectedRouter.put("/user", ValidateParamsMiddleware(userScheme.updateUserSchema), Users.updateUser);
 protectedRouter.get("/users", Users.listUsers);
 protectedRouter.get("/users/:id", Users.userDetail);
 protectedRouter.delete("/users/:id", Users.deleteUser);
-protectedRouter.post("/user/change-password", Users.changePassword);
+protectedRouter.post("/user/change-password", ValidateParamsMiddleware(userScheme.changePasswordSchema), Users.changePassword);
 
 protectedRouter.get("/project", Projects.list);
-protectedRouter.post("/project", Projects.create);
+protectedRouter.post("/project", ValidateParamsMiddleware(projectsSchema.createProjectSchema), Projects.create);
 protectedRouter.put("/project", Projects.update);
 protectedRouter.delete("/project/:p_id", Projects.delete);
 protectedRouter.post("/project/invite", Projects.invite);
